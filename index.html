@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter The Dungeon</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./assets/images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+</head>
+
+<body class="shadowBox">
+    <div id="header" class = "coloredTitle">The DND Journey</div>
+
+    <div id="lightboxContainer" style="display:none;">
+        <img id="lightboxImg" class="shadowBox" src="" alt="">
+    </div>
+
+    <div id="diceDropdown">
+        <div id="allDice">
+            <div id="d20" class = "shadowBox">
+                <img src="assets/images/d20.png" alt="A d20 die">
+                <span></span>
+            </div>
+            <div id="d12" class = "shadowBox">
+                <img src="assets/images/d12.png" alt="A d12 die">
+                <span></span>
+            </div>
+            <div id="d00" class = "shadowBox">
+                <img src="assets/images/d00.png" alt="A d00 die">
+                <span></span>
+            </div>
+            <div id="d10" class = "shadowBox">
+                <img src="assets/images/d10.png" alt="A d10 die">
+                <span></span>
+            </div>
+            <div id="d08" class = "shadowBox">
+                <img src="assets/images/d08.png" alt="A d08 die">
+                <span></span>
+            </div>
+            <div id="d06" class = "shadowBox">
+                <img src="assets/images/d06.png" alt="A d06 die">
+                <span></span>
+            </div>
+            <div id="d04" class = "shadowBox">
+                <img src="assets/images/d04.png" alt="A d04 die">
+                <span></span>
+            </div>
+        </div>
+
+        <div id="dicesAndScore">
+            <div id="severalDiceRoller" class = "shadowBox"></div>
+            <div id="scoreModifier" class = "shadowBox"></div>
+            <div id="diceScore" class = "shadowBox"></div>
+        </div>
+
+        <div id="buttonSeries">
+            <div id="tabButtons">
+                <button type="button" id="openCombatButton" class="blueButton">Enter Combat!</button>
+                <button type="button" id="clearDiceArray" class="blueButton">Clear Dice Array!</button>
+                <button type="button" id="rollDiceArray" class="blueButton">Roll All Dice!</button>
+            </div>
+
+            <div id="diceButtons">
+                <button type="button" id="resetDiceButton" class="blueButton">Reset!</button>
+                <button type="button" id="diceButton" class="blueButton">Roll!</button>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="differentPages">
+        <div id="sideBarComp">
+            <button id="menuToggleBtn" class="blueButton">☰</button>
+
+            <div id="buttonSidebar" class="sidebar">
+                <button id="enterCombat" class="blueButton">Enter Battle!</button>
+                <button id="showCharacter" class="blueButton">Show Character</button>
+                <button id="enterSpells" class="blueButton">Show Spells!</button>
+                <button id="enterNotes" class="blueButton">Show <br> Notes</button>
+                <button id="enterArt" class="blueButton">Show <br> Artwork</button>
+            </div>
+        </div>
+
+        <div id="currentPage"  class = "shadowBox">
+
+            <div id="combatPage">
+                <div id="spellCasting"></div>
+
+                <div id="modificationButtons">
+                    <button id="savingThrow" class="blueButton">Saving Throw?</button>
+                    <button id="inspiration" class="blueButton">Bardic Inspiration?</button>
+                    <button id="advantage" class="blueButton">Advantage?</button>
+                </div>
+
+                <div id="combatAbilityScores"></div>
+                <div id="combatModifierScores"></div>
+                <div id="combatSkillsScores"></div>
+                <div id="combatSpellList"></div>
+            </div>
+
+            <div id="spellsPage">
+                <div id="spellsContainer"></div>
+            </div>
+
+            <div id="characterSheet">
+                <div id="basicInfo" class = "shadowBox">
+                    <div id="biCharName">
+                        <div>‎</div>
+                        <hr>
+                        <b class= "coloredTitle">Character Name</b>
+                    </div>
+
+                    <div id="biClsLvl" class="dropdown">
+                        <div class="mainValue"></div>
+                        <div class="dropdownList"></div>
+                        <hr>
+                        <b class= "coloredTitle">Class & Level</b>
+                    </div>
+
+                    <div id="biBckg">
+                        <div>‎</div>
+                        <hr>
+                        <b class= "coloredTitle">Background</b>
+                    </div>
+
+                    <div id="biPlayName">
+                        <div>‎</div>
+                        <hr>
+                        <b class= "coloredTitle">Player Name</b>
+                    </div>
+
+                    <div id="biRace" class="dropdown">
+                        <div class="mainValue"></div>
+                        <div class="dropdownList"></div>
+                        <hr>
+                        <b class= "coloredTitle">Race</b>
+                    </div>
+
+                    <div id="biAlign">
+                        <div>‎</div>
+                        <hr>
+                        <b class= "coloredTitle">Alignment</b>
+                    </div>
+
+                    <div id="biExp">
+                        <div>‎</div>
+                        <hr>
+                        <b class= "coloredTitle">Experience Points</b>
+                    </div>
+                </div>
+
+                <div id="abilityScores" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Ability Scores</b></div>
+                    <div id="abilitiesGrid"></div>
+                </div>
+
+                <div id="savingThrows" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Saving Throws</b></div>
+                    <div id="savesGrid"></div>
+                </div>
+
+                <div id="skills" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Skills</b></div>
+                    <div id="skillsGrid"></div>
+                </div>
+
+                <div id="combat" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Combat</b></div>
+                    <div id="combatGrid"></div>
+                </div>
+
+                <div id="equipment" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Equipment</b></div>
+                    <div id="equipmentList"></div>
+                </div>
+
+                <div id="feats" class = "shadowBox">
+                    <div class="title coloredTitle"><b>Feats</b></div>
+                    <div id="featsList"></div>
+                </div>
+            </div>
+
+            <div id="notesPage">
+                <textarea id="notesEditor">a</textarea>
+                <button id="saveNotesButton" class="blueButton">Save Notes</button>
+            </div>
+
+            <div id="artPage"></div>
+        </div>
+    </div>
+
+    <div id="spellTemplate">
+        <div class="spellName "><b class= "coloredTitle">Name:</b> <span></span></div>
+        <div class="spellSchool"><b class= "coloredTitle">School:</b> <span></span></div>
+        <div class="spellCastingTime"><b class= "coloredTitle">Casting Time:</b> <span></span></div>
+        <div class="spellRange"><b class= "coloredTitle">Range:</b> <span></span></div>
+        <div class="spellTarget"><b class= "coloredTitle">Target(s):</b> <span></span></div>
+        <div class="spellComponents"><b class= "coloredTitle">Components:</b> <span></span></div>
+        <div class="spellDuration"><b class= "coloredTitle">Duration:</b> <span></span></div>
+        <div class="spellDescription"><b class= "coloredTitle">Description:</b> <span></span></div>
+        <div class="spellAtHigherLvl"><b class= "coloredTitle">At Higher Levels:</b> <span></span></div>
+    </div>
+
+</body>
+</html>

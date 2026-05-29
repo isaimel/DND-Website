@@ -1,0 +1,177 @@
+#diceDropdown {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#allDice {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-self: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+    height: 0rem;
+    width: 100%;
+    min-width: 100%;
+    padding: 0rem 1rem 0rem 1rem;
+    box-sizing: border-box;
+    transition: .4s;
+}
+#allDice div {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+    width: 8rem;
+    height: 80%;
+    text-align: center;
+    border-radius: .4rem;
+    opacity: .4;
+    transition: 0.4s;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+#allDice div:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+#allDice div img {
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#allDice div img:hover, #allDice div span:hover {
+    transform: scale(1.1);
+}
+
+#allDice div span {
+    font-family: "Pirata One";
+    font-size: xx-large;
+    font-weight: 400;
+}
+#dicesAndScore{
+    display: inline-flex;
+    position: relative;
+    box-sizing: border-box;
+    margin: .6rem;
+    height: 0;
+    width: 100%;
+    margin: .4rem;
+    gap: 1rem;
+    transition: 0.4s;
+}
+#severalDiceRoller{
+    display: inline-flex;
+    width: 70%;
+    height: 100%;
+    gap: 1rem;
+    padding: 0rem 1rem;
+    align-items: center;
+    scrollbar-width: thin;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#scoreModifier{
+    display: inline-flex;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    scrollbar-width: thin;
+    overflow-x: auto;
+    justify-content: center;
+    overflow-y: hidden;
+    font-family: "Pirata One";
+    font-size: 4rem;
+}
+
+#diceScore{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pirata One";
+    font-size: 4rem;
+}
+#severalDiceRoller div{
+    width: 3rem;
+    height: fit-content;
+    padding: .1rem;
+    flex-shrink: 0;
+    user-select: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+#severalDiceRoller div img{
+    width: 100%;
+    height: auto;
+}
+#buttonSeries {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+    margin-top: .4rem;
+}
+#diceButtons{
+    display: flex;
+    flex-direction: row;
+    justify-self: start;
+    justify-items: flex-end;
+    align-self: flex-end;
+    align-items: end;
+    gap: .4rem;
+}
+#tabButtons {
+    display: flex;
+    gap: .2rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: fit-content;
+}
+
+#rollDiceArray, #clearDiceArray{
+    display: none;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-12rem);
+    }
+    95% {
+        transform: translateY(.1rem);
+    }
+    100% {
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: .8;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.diceMenuOpen {
+    animation: slideDown .3s ease-in-out;
+}
