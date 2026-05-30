@@ -94,3 +94,9 @@ hr {
 .coloredTitle{
     color: firebrick;
 }
+#spellTemplate{
+    display: none;
+}
+#diceButton{
+    display: none;
+}

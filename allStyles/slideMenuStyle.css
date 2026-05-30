@@ -16,7 +16,7 @@
 #menuToggleBtn {
     justify-self:end;
     align-self: flex-end;
-    display: block;
+    display: none;
     max-height: fit-content;
     z-index: 2;
     transition: .4s;

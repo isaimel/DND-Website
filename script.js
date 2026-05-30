@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
         allDice.style.height = open ? "12rem" : "16rem";
         dicesAndScore.style.height = open ? "6rem" : "0rem";
         openCombatButton.style.backgroundColor = open ? "gray" : "";
-        openCombatButton.innerHTML = open ? "Click to Add Dice!" : "Enter Combat!";
-        clearDiceArrayButton.style.display = open ? "flex" : "none";
+        openCombatButton.innerHTML = open ? "Roll Single Dice!" : "Roll Multiple Dice!";
+        // clearDiceArrayButton.style.display = open ? "flex" : "none";
         rollDiceArrayButton.style.display = open ? "flex" : "none";
         if (open){
             resetDieRolls(false);  
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function diceState(open){
         resetDieRolls(); 
         allDice.style.height = open ? "16rem" : "0rem";
-        diceButton.innerHTML = open ? "Hide!" : "Roll!";
+        diceButton.innerHTML = open ? "Hide!" : "Roll Single!";
         diceButton.style.backgroundColor = open ? "gray" : "";
     }
 
@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     resetDiceButton.addEventListener("click", function() {
+        clearDiceArrayButton.click();
         if (!combatActive)
             resetDieRolls(true);
     });
