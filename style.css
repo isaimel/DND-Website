@@ -33,6 +33,7 @@ body{
     scrollbar-color: rgba(178,34,34,0.5) transparent;
     padding: 1.5rem 1rem;
     font-family: "Bellefair", serif;
+    background-color: white;
 }
 #header {
     width: 100%;
